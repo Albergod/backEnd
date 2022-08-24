@@ -10,16 +10,16 @@ import {
 export const routes = express.Router();
 
 //obtener todos
-routes.get("api/contracts", getAllContracts);
+routes.get("/api/contracts", getAllContracts);
 
 //crear nuevo
-routes.post("api/contracts", createContract);
+routes.post("/api/contracts", createContract);
 
 //obtener uno
-routes.get("api/contracts/:id", getAContract);
+routes.get("/api/contracts/:id", getAContract);
 
 //eliminar
-routes.delete("api/contracts/:id", deleteContract);
+routes.delete("/api/contracts/:id", deleteContract);
 
 //actualizar
-routes.put("api/contracts/:id", UpdateContract);
+routes.put("/api/contracts/:id", UpdateContract);
