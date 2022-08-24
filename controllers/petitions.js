@@ -8,10 +8,10 @@ export const getAllContracts = async (req, res) => {
 
 export const createContract = async (req, res) => {
   try {
-    const { nombre, formato, ficha, año } = req.body;
+    const { nombre, formato, ficha, year } = req.body;
     const [response] = await pool.query(
-      "INSERT INTO contracts (nombre, formato, ficha, año) VALUES (?,?,?,?)",
-      [nombre, formato, ficha, año]
+      "INSERT INTO contracts (nombre, formato, ficha, year) VALUES (?,?,?,?)",
+      [nombre, formato, ficha, year]
     );
     res.json(response);
   } catch (error) {
