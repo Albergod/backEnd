@@ -33,7 +33,7 @@ export const getAContract = async (req, res) => {
 export const deleteContract = async (req, res) => {
   try {
     await pool.query("DELETE FROM contracts WHERE id = ?", [req.params.id]);
-    res.send("Documento eliminado");
+    res.json("Documento eliminado");
   } catch (error) {
     console.log(error);
   }
@@ -46,7 +46,7 @@ export const UpdateContract = async (req, res) => {
       req.params.id,
     ]);
 
-    res.send("documento actualizado");
+    res.json("documento actualizado");
     if (result.affectedRows === 0) {
       res.status(401).json({ message: "No se pudo actualizar el documento" });
     }
